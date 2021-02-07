@@ -1,17 +1,33 @@
+import React from "react";
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import Home from './components/Home/Home/Home';
+import Error from "./components/Error/Error";
 
 function App() {
   return (
-    <div>
+    <Router>
+      <Switch>
 
-      <h2>Welcome, Travel Guru Project.</h2>
-<<<<<<< HEAD
-      <Home></Home>
-=======
+        <Route path="/home">
+          <Home></Home>
+        </Route>
 
->>>>>>> dddc15026a48335de3433a90a473a41bd7cc3e25
-    </div>
+        <Route exact path="/">
+          <Home></Home>
+        </Route>
+
+        <Route path="*">
+          <Error></Error>
+        </Route>
+
+      </Switch>
+    </Router>
   );
 }
 
