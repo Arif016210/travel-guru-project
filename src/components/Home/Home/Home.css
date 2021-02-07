@@ -1,0 +1,10 @@
+.home{
+    background-image: url(../../../resources/Image/Travel\ guru.png);
+    background-repeat: no-repeat;
+    height: 800px;
+    background-size: 100%;
+}
+
+.home h2{
+    color: white;
+}

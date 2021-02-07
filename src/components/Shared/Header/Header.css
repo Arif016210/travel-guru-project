@@ -1,0 +1,28 @@
+.header{
+    color: white;
+}
+.header .logo{
+    height: 60px;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: #fff;
+    padding: 0px 30px;
+}
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: #fff;
+}
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color: #fff;
+}
+.form-control {
+    margin: 0px 70px;
+}
+
+.header .login {
+    background-color: #F9A51A;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 4px 20px;
+    border: none;
+    border-radius: 3px;
+}
