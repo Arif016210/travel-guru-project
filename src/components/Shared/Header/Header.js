@@ -39,9 +39,6 @@ const Header = () => {
                             <li className="nav-item">
                                 <a className="nav-link" href="#">Contact</a>
                             </li>
-
-
-
                         </ul>
                         <button className="login">Login</button>
                     </div>
