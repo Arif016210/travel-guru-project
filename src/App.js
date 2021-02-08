@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Home from './components/Home/Home/Home';
 import Error from "./components/Error/Error";
+import Booking from "./components/Booking/Booking";
 
 function App() {
   return (
@@ -16,6 +17,10 @@ function App() {
 
         <Route path="/home">
           <Home></Home>
+        </Route>
+
+        <Route path="/booking/:areaID">
+          <Booking></Booking>
         </Route>
 
         <Route exact path="/">

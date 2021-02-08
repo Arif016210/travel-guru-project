@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Slider.css';
 import fakeData from '../../../fakeData';
 import Carousel from 'react-bootstrap/Carousel'
+import { Link } from 'react-router-dom';
 
 const Slider = () => {
 
@@ -19,7 +20,9 @@ const Slider = () => {
                                     <div className=" col-md-7 slider-info ">
                                         <h1 > {item.name} </h1>
                                         <p> {item.shortInfo} </p>
-                                        <button className="booking">Booking Now <i class="fas fa-arrow-right"></i></button>
+                                        <Link to={`/booking/${item.id}`} >
+                                            <button className="bookingBtn">Booking Now <i class="fas fa-arrow-right"></i></button>
+                                        </Link>
                                     </div>
                                     <div className="col-md-5 text-right">
                                         <img className=" slider-img" src={item.img} alt="First slide" />
