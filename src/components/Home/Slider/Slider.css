@@ -1,0 +1,34 @@
+.slider .carousel-indicators li {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #F9A51A;
+}
+.slider .carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 550px;
+}
+
+.slider .slider-info{
+    padding-top: 100px;
+    padding-left: 60px;
+    color: white;
+}
+.slider .slider-info h1{
+    font-size: 60px;
+    padding-bottom: 25px;
+}
+.slider .booking {
+    background-color: #F9A51A;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 3px;
+    margin-top:25px;
+}
+.slider img{
+    height:60%;
+}

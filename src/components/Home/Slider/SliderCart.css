@@ -1,0 +1,50 @@
+/* 
+header {
+    
+    background: linear-gradient(rgba(0, 0, 0, 0.863), rgba(255, 255, 255, 0)), url('../../images/home-bg.png');
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}  */
+
+
+.locationInfo{
+    color: white;
+    margin-top: 100px;
+}
+
+.locationInfo h1{
+    font-family: 'Bebas Neue', 'cursive';
+    font-size: 100px;
+}
+
+.locationInfo p{
+    font-size: 20px;
+    /* font-family: 'Bebas Neue', 'cursive'; */
+    
+}
+
+.locationImg img{
+    height: 320px;
+    width: 200px;
+    margin: 10px;
+    
+}
+
+.locationImg img:hover{
+    border: 3px solid tomato;
+    border-radius: 10px;
+    box-shadow: 0px 0px 36px 1px rgba(0,0,0,0.75);
+    /* transition:  1s; */
+    /* transition-duration: 0.5s; */
+    /* transform: scale(0.75) */
+    
+}
+
+.locationImgName{
+    margin: 10px;
+    color: #fff;
+}
