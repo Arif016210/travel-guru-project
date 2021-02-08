@@ -1,0 +1,42 @@
+.booking{
+    height: 667px;
+}
+.booking .locationInfo{
+    color: #fff;
+    padding-top: 30px;
+    padding-left: 20px;
+}
+.booking .locationInfo h1{
+    font-size: 60px;
+    padding:20px 0px;
+}
+.booking .locationInfo p {
+    font-size: 17px;
+    line-height: 30px;
+}
+
+.booking .calenderForm{
+    padding:0px 50px;
+}
+.booking .calenderForm form{
+    border: 1px solid;
+    padding: 40px;
+    background-color:#fff;
+    color: black;
+    font-weight: 700;
+}
+.booking .calenderForm input{
+    background-color:#f2f2f2;
+}
+.form-control{
+    margin: 0px;
+}
+.booking .calenderForm .submitBtn{
+    background-color: #F9A51A;
+    font-weight: 700;
+    font-size: 16px;
+    border: none;
+    border-radius: 3px;
+    margin-top:25px;
+    color:black;
+}
