@@ -21,7 +21,7 @@ const Slider = () => {
                                         <h1 > {item.name} </h1>
                                         <p> {item.shortInfo} </p>
                                         <Link to={`/booking/${item.id}`} >
-                                            <button className="bookingBtn">Booking Now <i class="fas fa-arrow-right"></i></button>
+                                            <button className="bookingBtn">Booking Now <i className="fas fa-arrow-right"></i></button>
                                         </Link>
                                     </div>
                                     <div className="col-md-5 text-right">

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import fakeData from '../../fakeData';
 import Header from '../Shared/Header/Header';
 import './Booking.css';
@@ -22,7 +22,7 @@ const Booking = () => {
     const onSubmit = data => console.log(data);
 
     return (
-        // Background Image Added by home class from home component
+        // Background Image Added by home className from home component
         <section className="booking home">
             {/* Header Section Import to Shared folder */}
             <Header></Header>
@@ -65,7 +65,9 @@ const Booking = () => {
                                         {errors.date && <span className="text-danger">This field is required</span>}
                                     </div>
                                 </div>
-                                <button className="form-control submitBtn" type="submit">Start Booking</button>
+                                <Link to="/hotel">
+                                    <button className="form-control submitBtn" type="submit">Start Booking</button>
+                                </Link>
 
                             </form>
                         </div>
