@@ -1,11 +1,12 @@
 import React from 'react';
 import './Header.css';
-import logo from '../../../resources/logo2.png';
+import logo from '../../../resources/Logo.png';
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+
+const Header2 = () => {
     return (
-        <section className="header">
+        <section className="header2">
             <div className="container">
                 <nav className="navbar navbar-expand-lg navbar-light ">
 
@@ -27,7 +28,7 @@ const Header = () => {
                     {/* Menu Section */}
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav ml-auto">
-                            <li className="nav-item active">
+                            <li className="nav-item ">
                                 <a className="nav-link" href="/home">Home <span className="sr-only">(current)</span></a>
                             </li>
 
@@ -42,7 +43,7 @@ const Header = () => {
                             </li>
                         </ul>
                         <Link to="/login">
-                        <button className="login">Login</button>
+                            <button className="login">Login</button>
                         </Link>
                     </div>
 
@@ -52,4 +53,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default Header2;
