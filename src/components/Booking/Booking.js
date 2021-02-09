@@ -41,10 +41,6 @@ const Booking = () => {
                         <div className="calenderForm">
                             <form onSubmit={handleSubmit(onSubmit)}>
 
-
-                                {/* <input name="text" ref={register({ required: true })} />
-                                {errors.exampleRequired && <span>This field is required</span>} */}
-
                                 <div className="form-group">
                                     <p >Origin</p>
                                     <input type="text" defaultValue="" ref={register({ required: true })} name="orging" placeholder="Enter Your Location... " className="form-control" />
@@ -70,7 +66,7 @@ const Booking = () => {
                                     </div>
                                 </div>
                                 <button className="form-control submitBtn" type="submit">Start Booking</button>
-                                {/* <input className="form-control submitBtn" type="submit" /> */}
+
                             </form>
                         </div>
                     </div>

@@ -1,0 +1,48 @@
+.container-login{
+    width: 600px;
+    margin: 0px auto;
+}
+.login-section{
+    border: 2px solid black;
+    padding: 30px 60px;
+    border-radius: 5px;
+
+}
+
+
+.login-section h3{
+    padding: 20px 0px;
+    font-size: 25px;
+}
+
+.form-control{
+    border-bottom: 1px solid grey;
+    margin-bottom: 20px;
+}
+.login .loginBtn {
+    background-color: #F9A51A;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 4px 20px;
+    border: none;
+    border-radius: 3px;
+    margin-top: 20px;
+}
+
+.login .googleBtn{
+    padding: 7px 60px 7px 12px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 20px;
+    border: 1px solid grey;
+    margin: 20px 0px;
+}
+.login .googleImg{
+    height: 25px;
+    padding-right: 40px;
+}
+
+
+
+/*Login page css end*/
+

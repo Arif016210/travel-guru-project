@@ -1,3 +1,5 @@
+/* For Header 1 file  */
+
 .header{
     color: white;
     margin-bottom: 40px;
@@ -5,17 +7,17 @@
 .header .logo{
     height: 60px;
 }
-.navbar-light .navbar-nav .nav-link {
+.header .navbar-light .navbar-nav .nav-link {
     color: #fff;
     padding: 0px 30px;
 }
-.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+.header .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
     color: #fff;
 }
-.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
-    color: #fff;
+.header .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color:#F9A51A;
 }
-.form-control {
+.header .form-control {
     margin: 0px 70px;
 }
 
@@ -26,4 +28,38 @@
     padding: 4px 20px;
     border: none;
     border-radius: 3px;
+}
+
+
+/* For Header 2 FIle */
+
+.header2{
+    color: black;
+    margin-bottom: 40px;
+}
+.header2 .logo{
+    height: 60px;
+}
+.header2 .navbar-light .navbar-nav .nav-link {
+    padding: 0px 30px;
+    font-weight: 700;
+}
+.header2 .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: #fff;
+}
+/* .header2 .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color: black;
+} */
+
+.header2 .login {
+    background-color: #F9A51A;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 4px 20px;
+    border: none;
+    border-radius: 3px;
+}
+.header2 .form-control {
+    margin: 0px 70px;
+    border:2px solid black;
 }
