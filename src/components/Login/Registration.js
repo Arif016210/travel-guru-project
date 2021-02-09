@@ -1,4 +1,4 @@
-import React, { Component, useContext, useState } from 'react';
+import React, { Component, useState } from 'react';
 import './Login.css';
 import google from '../../resources/Icon/google.png';
 import Header from '../../components/Shared/Header/Header2';
@@ -6,11 +6,9 @@ import Header from '../../components/Shared/Header/Header2';
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebase.config';
-import { Link, useHistory, useLocation } from 'react-router-dom';
-import { UserContext } from '../../App';
+import { Link } from 'react-router-dom';
 
-
-const Login = () => {
+const Registration = () => {
     if (firebase.apps.length === 0) {
         firebase.initializeApp(firebaseConfig);
     }
@@ -19,7 +17,6 @@ const Login = () => {
     const [user, setUser] = useState({
         isSignedIn: false,
         name: '',
-        displayName: '',
         firstName: '',
         newUser: false,
         email: '',
@@ -28,12 +25,6 @@ const Login = () => {
         error: '',
         success: false,
     })
-
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
-    let history = useHistory();
-    let location = useLocation();
-
-    let { from } = location.state || { from: { pathname: "/" } };
 
     // Google Account Authentication Part
 
@@ -51,7 +42,7 @@ const Login = () => {
                     photo: photoURL
                 }
                 setUser(signedInUser);
-                // console.log(displayName, email, photoURL)
+                console.log(displayName, email, photoURL)
 
             }).catch((error) => {
                 // Handle Errors here.
@@ -74,7 +65,6 @@ const Login = () => {
                     photo: '',
                 }
                 setUser(signedOutUser)
-                setLoggedInUser(signedOutUser);
                 // console.log("Log Out Successfully!")
             }).catch((error) => {
 
@@ -83,54 +73,30 @@ const Login = () => {
     }
 
     const handleSubmit = (e) => {
-        // if (user.email && user.password) {
-        //     firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
-        //         .then(res => {
-
-        //             const newUserInfo = { ...user }
-        //             newUserInfo.error = '';
-        //             newUserInfo.success = true;
-        //             setUser(newUserInfo);
-        //         })
-        //         .catch(error => {
-
-        //             const newUserInfo = { ...user }
-        //             newUserInfo.error = error.message;
-        //             newUserInfo.success = false;
-        //             setUser(newUserInfo);
-
-        //         });
-        // }
-        if (!newUser) {
-            firebase.auth().signInWithEmailAndPassword(user.email, user.password)
+        if (user.email && user.password) {
+            firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
                 .then(res => {
+
                     const newUserInfo = { ...user }
-
-                    const { displayName } = res.user;
-
                     newUserInfo.error = '';
                     newUserInfo.success = true;
-                    newUserInfo.isSignedIn = true;
-                    newUserInfo.name = displayName;
                     setUser(newUserInfo);
-                    setLoggedInUser(newUserInfo);
-                    history.replace(from);
-                    // console.log(newUserInfo);
-                    console.log('sign in user info', res.user)
+                    updatedUserName(user.name)
                 })
-                .catch((error) => {
+                .catch(error => {
+
                     const newUserInfo = { ...user }
                     newUserInfo.error = error.message;
                     newUserInfo.success = false;
                     setUser(newUserInfo);
+
                 });
         }
-
         e.preventDefault()
     }
 
     const handleBlur = (e) => {
-        // console.log(e.target.value)
+        console.log(e.target.value)
 
         let isFieldValid = true;
 
@@ -152,7 +118,17 @@ const Login = () => {
         }
     }
 
+    const updatedUserName = name => {
+        const user = firebase.auth().currentUser;
 
+        user.updateProfile({
+            displayName: name,
+        }).then(function () {
+            console.log('User Name updated Successfully')
+        }).catch(function (error) {
+            console.log(error)
+        });
+    }
 
 
 
@@ -166,36 +142,36 @@ const Login = () => {
             <div className="container container-login">
                 {/* User Login Part */}
                 <div className="login-section">
-                    <h3>Login</h3>
+                    <h3>Create an account</h3>
 
                     <p style={{ color: 'red' }} > {user.error} </p>
                     {
-                        user.success && <p style={{ color: 'green' }} > User {newUser ? 'Created' : 'logged in'} successfully </p>
+                        user.success && <p style={{ color: 'green' }} > User Created successfully </p>
                     }
 
 
 
                     <form onSubmit={handleSubmit}>
 
-                        {/* {newUser &&
-                            <input type="text" name="firstName" onBlur={handleBlur} placeholder="Enter Your First Name..." className="form-control" />
-                        } */}
+
+                        <input type="text" name="name" onBlur={handleBlur} placeholder="Enter Your Name..." className="form-control" />
+
 
                         <input onBlur={handleBlur} type="text" name="email" placeholder="UserName or Email..." className="form-control" required />
                         <input onBlur={handleBlur} type="Password" name="password" placeholder="Password" className="form-control" required />
 
-                        <div className="row">
+                        {/* <div className="row">
                             <div className="col-md-6">
                                 <input type="checkbox" name="" /> <span className="pl-1">Remember Me</span>
                             </div>
                             <div className="col-md-6 text-right ">
                                 <p className=" text-warning">Forgot Password</p>
                             </div>
-                        </div>
+                        </div> */}
 
-                        <button className="loginBtn form-control">Login</button>
+                        <button className="loginBtn form-control mt-5">Create an account</button>
 
-                        <p className="text-center">Dont't have an account? <Link to="regi" className="text-warning" >Create an account</Link></p>
+                        <p className="text-center">Already have an account? <Link to="/login" className="text-warning" name="newUser">Login</Link></p>
 
                     </form>
                 </div>
@@ -213,4 +189,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Registration;

@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Header.css';
 import logo from '../../../resources/Logo.png';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../../App';
 
 
-const Header2 = () => {
+const Header2 = ({ signOutUser }) => {
+
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+
+
+
     return (
         <section className="header2">
             <div className="container">
@@ -28,9 +34,11 @@ const Header2 = () => {
                     {/* Menu Section */}
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav ml-auto">
+
                             <li className="nav-item ">
-                                <a className="nav-link" href="/home">Home <span className="sr-only">(current)</span></a>
+                                <Link to="/home" className="nav-link" >Home <span className="sr-only">(current)</span></Link>
                             </li>
+
 
                             <li className="nav-item">
                                 <a className="nav-link" href="#">News</a>
@@ -38,13 +46,21 @@ const Header2 = () => {
                             <li className="nav-item">
                                 <a className="nav-link" href="#">Destination</a>
                             </li>
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <a className="nav-link" href="#">Contact</a>
+                            </li> */}
+                            <li className="nav-item">
+                                <a className="nav-link" href="#"> {loggedInUser.name} </a>
                             </li>
                         </ul>
-                        <Link to="/login">
-                            <button className="login">Login</button>
-                        </Link>
+                        {
+                            loggedInUser.isSignedIn ?
+                                <button onClick={() => signOutUser()} className="login">Log out</button>
+                                :
+                                <Link to="/login">
+                                    <button className="login">Login</button>
+                                </Link>
+                        }
                     </div>
 
                 </nav>
