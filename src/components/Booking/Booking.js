@@ -13,7 +13,7 @@ const Booking = () => {
 
     // console.log(bookingArea)
 
-    const { name, description } = bookingArea;
+    const { name, description, id } = bookingArea;
 
 
     // calender Form part
@@ -65,7 +65,7 @@ const Booking = () => {
                                         {errors.date && <span className="text-danger">This field is required</span>}
                                     </div>
                                 </div>
-                                <Link to="/hotel">
+                                <Link to={`/hotel/${id}`}>
                                     <button className="form-control submitBtn" type="submit">Start Booking</button>
                                 </Link>
 
