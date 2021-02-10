@@ -51,7 +51,8 @@ const Login = () => {
                     photo: photoURL
                 }
                 setUser(signedInUser);
-                // console.log(displayName, email, photoURL)
+                setLoggedInUser(signedInUser);
+                console.log(displayName, email, photoURL)
 
             }).catch((error) => {
                 // Handle Errors here.
@@ -74,6 +75,7 @@ const Login = () => {
                     photo: '',
                 }
                 setUser(signedOutUser)
+
                 setLoggedInUser(signedOutUser);
                 // console.log("Log Out Successfully!")
             }).catch((error) => {

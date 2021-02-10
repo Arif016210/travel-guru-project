@@ -44,7 +44,7 @@ function App() {
             <Registration></Registration>
           </Route>
 
-          <PrivateRoute path="/hotel">
+          <PrivateRoute path="/hotel/:hotelID">
             <HotelInfo></HotelInfo>
           </PrivateRoute>
 
