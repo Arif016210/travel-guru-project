@@ -146,7 +146,7 @@ const Registration = () => {
 
                     <p style={{ color: 'red' }} > {user.error} </p>
                     {
-                        user.success && <p style={{ color: 'green' }} > User Created successfully </p>
+                        user.success && <p style={{ color: 'green' }} > User Created successfully now login please! </p>
                     }
 
 
@@ -159,15 +159,6 @@ const Registration = () => {
 
                         <input onBlur={handleBlur} type="text" name="email" placeholder="UserName or Email..." className="form-control" required />
                         <input onBlur={handleBlur} type="Password" name="password" placeholder="Password" className="form-control" required />
-
-                        {/* <div className="row">
-                            <div className="col-md-6">
-                                <input type="checkbox" name="" /> <span className="pl-1">Remember Me</span>
-                            </div>
-                            <div className="col-md-6 text-right ">
-                                <p className=" text-warning">Forgot Password</p>
-                            </div>
-                        </div> */}
 
                         <button className="loginBtn form-control mt-5">Create an account</button>
 
