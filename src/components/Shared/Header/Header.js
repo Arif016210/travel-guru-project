@@ -4,7 +4,7 @@ import logo from '../../../resources/logo2.png';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../App';
 
-const Header = () => {
+const Header = ({ signOutUser }) => {
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
 
@@ -33,7 +33,7 @@ const Header = () => {
                             </li>
 
                             <li className="nav-item">
-                                <a className="nav-link" href="#">News</a>
+                                <a className="nav-link" href="#">Booking</a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">Destination</a>
@@ -45,9 +45,15 @@ const Header = () => {
                                 <a className="nav-link" href="#"> {loggedInUser.name} </a>
                             </li>
                         </ul>
-                        <Link to="/login">
-                            <button className="login">Login</button>
-                        </Link>
+
+                        {
+                            loggedInUser.isSignedIn ?
+                                <button onClick={() => signOutUser()} className="login">Log out</button>
+                                :
+                                <Link to="/login">
+                                    <button className="login">Login</button>
+                                </Link>
+                        }
                     </div>
 
                 </nav>

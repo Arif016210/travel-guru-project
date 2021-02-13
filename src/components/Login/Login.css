@@ -1,12 +1,15 @@
+.login{
+    
+}
 .container-login{
     width: 600px;
     margin: 0px auto;
+    /* color:white; */
 }
 .login-section{
-    border: 2px solid black;
+    border: 1px solid black;
     padding: 30px 60px;
     border-radius: 5px;
-
 }
 
 

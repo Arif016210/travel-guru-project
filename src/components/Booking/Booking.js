@@ -1,17 +1,41 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useParams } from 'react-router-dom';
+import { UserContext } from '../../App';
 import fakeData from '../../fakeData';
 import Header from '../Shared/Header/Header';
 import './Booking.css';
+// Firebase import file
+import "firebase/auth";
+import firebase from "firebase/app";
 
 const Booking = () => {
+
+    // Sign Out Function
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+    const signOutUser = () => {
+        firebase.auth().signOut()
+            .then(res => {
+                const signedOutUser = {
+                    isSignedIn: false,
+                    name: '',
+                    email: '',
+                    photo: '',
+                }
+                setLoggedInUser(signedOutUser);
+
+            }).catch((error) => {
+
+            });
+    }
+
+
 
     // Location Information
     const { areaID } = useParams();
     const bookingArea = fakeData.find(area => area.id === areaID)
 
-    // console.log(bookingArea)
+
 
     const { name, description, id } = bookingArea;
 
@@ -25,7 +49,7 @@ const Booking = () => {
         // Background Image Added by home className from home component
         <section className="booking home">
             {/* Header Section Import to Shared folder */}
-            <Header></Header>
+            <Header signOutUser={signOutUser}></Header>
 
             <div className="container">
                 <div className="row">

@@ -1,13 +1,14 @@
-import React, { Component, useContext, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './Login.css';
+import { Link, useHistory, useLocation } from 'react-router-dom';
+import { UserContext } from '../../App';
 import google from '../../resources/Icon/google.png';
 import Header from '../../components/Shared/Header/Header2';
 // firebase Authentication Import File
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebase.config';
-import { Link, useHistory, useLocation } from 'react-router-dom';
-import { UserContext } from '../../App';
+
 
 
 const Login = () => {
@@ -77,32 +78,13 @@ const Login = () => {
                 setUser(signedOutUser)
 
                 setLoggedInUser(signedOutUser);
-                // console.log("Log Out Successfully!")
             }).catch((error) => {
 
             });
-        // console.log('Log Out')
     }
 
     const handleSubmit = (e) => {
-        // if (user.email && user.password) {
-        //     firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
-        //         .then(res => {
 
-        //             const newUserInfo = { ...user }
-        //             newUserInfo.error = '';
-        //             newUserInfo.success = true;
-        //             setUser(newUserInfo);
-        //         })
-        //         .catch(error => {
-
-        //             const newUserInfo = { ...user }
-        //             newUserInfo.error = error.message;
-        //             newUserInfo.success = false;
-        //             setUser(newUserInfo);
-
-        //         });
-        // }
         if (!newUser) {
             firebase.auth().signInWithEmailAndPassword(user.email, user.password)
                 .then(res => {
@@ -132,7 +114,6 @@ const Login = () => {
     }
 
     const handleBlur = (e) => {
-        // console.log(e.target.value)
 
         let isFieldValid = true;
 
@@ -178,10 +159,6 @@ const Login = () => {
 
 
                     <form onSubmit={handleSubmit}>
-
-                        {/* {newUser &&
-                            <input type="text" name="firstName" onBlur={handleBlur} placeholder="Enter Your First Name..." className="form-control" />
-                        } */}
 
                         <input onBlur={handleBlur} type="text" name="email" placeholder="UserName or Email..." className="form-control" required />
                         <input onBlur={handleBlur} type="Password" name="password" placeholder="Password" className="form-control" required />

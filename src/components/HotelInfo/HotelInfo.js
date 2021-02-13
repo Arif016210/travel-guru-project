@@ -1,14 +1,16 @@
 import React, { useContext } from 'react';
 import './HotelInfo.css';
 import Header from '../../components/Shared/Header/Header2'
-import firebase from "firebase/app";
-import "firebase/auth";
 import { UserContext } from '../../App';
 import { useParams } from 'react-router-dom';
 import fakeData from '../../fakeData';
+// firebase import file
+import firebase from "firebase/app";
+import "firebase/auth";
 
 const HotelInfo = () => {
 
+    // logout function
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const signOutUser = () => {
         firebase.auth().signOut()
@@ -26,17 +28,11 @@ const HotelInfo = () => {
             });
     }
 
-
     const { hotelID } = useParams();
-
     const locationInfo = fakeData.find(location => location.id === hotelID);
 
-    // console.log(hotelInfo.hotels?.name)
-
-
-
     return (
-        <section>
+        <section className="hotelInfo">
             <Header signOutUser={signOutUser} ></Header>
 
 
