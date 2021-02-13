@@ -33,7 +33,7 @@ const Header = ({ signOutUser }) => {
                             </li>
 
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Booking</a>
+                                <a className="nav-link" href="#">News</a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">Destination</a>
